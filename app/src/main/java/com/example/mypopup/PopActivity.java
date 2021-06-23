@@ -6,7 +6,10 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.view.Gravity;
+import android.view.View;
 import android.view.WindowManager;
+import android.widget.Button;
+import android.widget.Toast;
 
 public class PopActivity extends Activity {
 
@@ -28,5 +31,17 @@ public class PopActivity extends Activity {
         params.y = -20;
 
         getWindow().setAttributes(params);
+
+        final Button button = findViewById(R.id.button2);
+        button.setOnClickListener( v -> {
+            int n1 = (int) (Math.random()*100);
+            if (n1 >= 50) {
+                Toast.makeText(getApplicationContext(), "Acertaste", Toast.LENGTH_SHORT).show();
+            } else {
+                Toast.makeText(getApplicationContext(), "Fallaste", Toast.LENGTH_SHORT).show();
+            }
+        } );
+
+
     }
 }
