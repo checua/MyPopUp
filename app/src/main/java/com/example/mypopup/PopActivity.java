@@ -3,6 +3,7 @@ package com.example.mypopup;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.view.Gravity;
@@ -40,6 +41,12 @@ public class PopActivity extends Activity {
             } else {
                 Toast.makeText(getApplicationContext(), "Fallaste", Toast.LENGTH_SHORT).show();
             }
+        } );
+
+        final Button botonera = findViewById(R.id.button);
+        botonera.setOnClickListener( v -> {
+            Intent i = new Intent(getApplicationContext(), Botonera.class);
+            startActivity(i);
         } );
 
 
