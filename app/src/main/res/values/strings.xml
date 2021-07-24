@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">MyPopUp</string>
+    <string name="op1">Opción 1</string>
+    <string name="op2">Opción 2</string>
+    <string name="op3">Opción 3</string>
 </resources>

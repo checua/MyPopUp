@@ -2,6 +2,7 @@ package com.example.mypopup;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -29,11 +30,13 @@ public class Botonera extends AppCompatActivity {
 
         //Creamos los botones en bucle
         for (int i=0; i<numBotones; i++){
-            Button button = new Button(this);
+            2
             //Asignamos propiedades de layout al boton
             button.setLayoutParams(lp);
             //Asignamos Texto al botón
             button.setText("Boton "+String.format("%02d", i ));
+            button.setOnClickListener(new ButtonsOnClickListener(this,i));
+
             //Añadimos el botón a la botonera
             llBotonera.addView(button);
         }
@@ -41,10 +44,24 @@ public class Botonera extends AppCompatActivity {
 
     class ButtonsOnClickListener implements View.OnClickListener
     {
+        Context context;
+        int numButton;
+
+        public ButtonsOnClickListener(Context context, int numButton) {
+            this.context = context;
+            this.numButton = numButton;
+        }
+
         @Override
         public void onClick(View v)
         {
-            Toast.makeText(getApplicationContext(),"Pulsado", Toast.LENGTH_SHORT).show();
+            String mensaje="";
+            if (numButton%2==0)
+                mensaje="Boton PAR "+String.format("%02d", numButton );
+            else
+                mensaje="Boton IMPAR "+String.format("%02d", numButton );
+
+            Toast.makeText(this.context,mensaje,Toast.LENGTH_SHORT).show();
         }
 
     };

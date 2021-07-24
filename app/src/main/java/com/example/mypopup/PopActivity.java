@@ -49,6 +49,14 @@ public class PopActivity extends Activity {
             startActivity(i);
         } );
 
+        final Button dynamicBtn = findViewById(R.id.button3);
+        dynamicBtn.setOnClickListener( v -> {
+            Toast.makeText(getApplicationContext(), "Dynamic", Toast.LENGTH_SHORT).show();
+
+            Button buttonx = new Button(this);
+
+        } );
+
 
     }
 }
