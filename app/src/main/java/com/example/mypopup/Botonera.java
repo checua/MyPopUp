@@ -1,13 +1,13 @@
 package com.example.mypopup;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Context;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class Botonera extends AppCompatActivity {
 
@@ -30,7 +30,7 @@ public class Botonera extends AppCompatActivity {
 
         //Creamos los botones en bucle
         for (int i=0; i<numBotones; i++){
-            2
+            Button button = new Button(this);
             //Asignamos propiedades de layout al boton
             button.setLayoutParams(lp);
             //Asignamos Texto al botón
