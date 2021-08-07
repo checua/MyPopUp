@@ -11,7 +11,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class Botonera extends AppCompatActivity {
 
-    static int numBotones = 20;
+    static int nunBones = 20;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,7 +29,7 @@ public class Botonera extends AppCompatActivity {
                 LinearLayout.LayoutParams.WRAP_CONTENT );
 
         //Creamos los botones en bucle
-        for (int i=0; i<numBotones; i++){
+        for (int i = 0; i< nunBones; i++){
             Button button = new Button(this);
             //Asignamos propiedades de layout al boton
             button.setLayoutParams(lp);
@@ -62,6 +62,8 @@ public class Botonera extends AppCompatActivity {
                 mensaje="Boton IMPAR "+String.format("%02d", numButton );
 
             Toast.makeText(this.context,mensaje,Toast.LENGTH_SHORT).show();
+
+
         }
 
     };

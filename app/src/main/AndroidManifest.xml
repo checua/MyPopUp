@@ -9,11 +9,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MyPopUp">
-        <activity android:name=".Botonera"></activity>
+        <activity android:name=".Botonera">
+
+        </activity>
         <activity
             android:name=".PopActivity"
-            android:theme="@style/AppTheme.PopMe"></activity>
-        <activity android:name=".MainActivity">
+            android:theme="@style/AppTheme.PopMe">
+        </activity>
+        <activity android:name=".MainActivity"
+            android:theme="@style/AppTheme.PopMe">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

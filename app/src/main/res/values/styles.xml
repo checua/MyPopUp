@@ -9,10 +9,23 @@
     <style name="AppTheme.PopMe">
         <item name="android:windowIsTranslucent">true</item>
         <item name="android:windowCloseOnTouchOutside">true</item>
-        <item name="android:windowActivityTransitions">false</item>
-        <item name = "android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowActivityTransitions">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
         <item name="android:windowAnimationStyle">@null</item>
         <item name="android:windowAllowReturnTransitionOverlap">@null</item>
+        <item name="android:windowAllowEnterTransitionOverlap">@null</item>
+        <item name="android:windowExitTransition">@null</item>
+        <item name="android:windowDisablePreview">true</item>
+    </style>
+
+    <style name="AppTheme.MainX">
+        <item name="android:windowCloseOnTouchOutside">true</item>
+
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowAnimationStyle">@null</item>
+        <item name="android:windowAllowReturnTransitionOverlap">@null</item>
+        <item name="android:windowAllowEnterTransitionOverlap">@null</item>
+        <item name="android:windowExitTransition">@null</item>
         <item name="android:windowDisablePreview">true</item>
     </style>
 
