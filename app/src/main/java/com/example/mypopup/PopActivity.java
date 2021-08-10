@@ -3,6 +3,7 @@ package com.example.mypopup;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
@@ -10,6 +11,7 @@ import android.view.Gravity;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
 public class PopActivity extends Activity {
@@ -51,12 +53,61 @@ public class PopActivity extends Activity {
 
         final Button dynamicBtn = findViewById(R.id.button3);
         dynamicBtn.setOnClickListener( v -> {
-            Toast.makeText(getApplicationContext(), "Dynamic", Toast.LENGTH_SHORT).show();
+           // Toast.makeText(getApplicationContext(), "Dynamic", Toast.LENGTH_SHORT).show();
 
-            Button buttonx = new Button(this);
+            //Button buttonx = new Button(this);
+
+            //Establecemos el layout main
+            setContentView(R.layout.activity_pop);
+
+            //Obtenemos el linear layout donde colocar los botones
+            LinearLayout ll3btns = (LinearLayout) findViewById(R.id.ll3btns);
+
+            LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT,
+                    LinearLayout.LayoutParams.WRAP_CONTENT );
+
+
+
+            for (int i = 0; i< 1; i++){
+                Button btn = new Button(this);
+                //Asignamos propiedades de layout al boton
+                btn.setLayoutParams(lp);
+                //Asignamos Texto al botón
+                btn.setText("Boton "+String.format("%02d", i ));
+                btn.setOnClickListener(new ButtonsOnClickListener (this,i));
+
+                //Añadimos el botón a la botonera
+                ll3btns.addView(button);
+            }
 
         } );
 
 
     }
+
+    class ButtonsOnClickListener implements View.OnClickListener
+    {
+        Context context;
+        int numButton;
+
+        public ButtonsOnClickListener(Context context, int numButton) {
+            this.context = context;
+            this.numButton = numButton;
+        }
+
+        @Override
+        public void onClick(View v)
+        {
+            String mensaje="";
+            if (numButton%2==0)
+                mensaje="Boton PAR "+String.format("%02d", numButton );
+            else
+                mensaje="Boton IMPAR "+String.format("%02d", numButton );
+
+            Toast.makeText(this.context,mensaje,Toast.LENGTH_SHORT).show();
+
+
+        }
+
+    };
 }
